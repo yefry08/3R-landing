@@ -15,55 +15,86 @@ body {
     background-color: #f8f8f8;
     color: #333;
     line-height: 1.6;
-}
-
-   /* Estilos de navbar */
-   .navbar {
-    background-color: #333;
-    overflow: hidden;
-}
-
-/* Navbar links */
-.navbar a {
-    float: left;
-    text-align: center;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-/* Navbar links on mouse-over */
-.navbar a:hover {
-    background-color: #000;
-}
-
-/* Current/active navbar link */
-.active {
-    background-color: #04AA6D;
-}
-
-/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500px) {
-    .navbar a {
-        float: none;
-        display: block;
-    }
-}
-
-/* Estilos básicos para el resto de la página */
-body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.navbar .menu-icon {
+  display: none;
+}
+
+/* Responsive navbar styles */
+@media screen and (max-width: 768px) {
+  .navbar a:not(.menu-icon) {
+    display: none;
+  }
+  
+  .navbar a.menu-icon {
+    float: right;
+    display: block;
+  }
+  
+  /* This is the critical part that makes the toggle work */
+  .navbar.responsive {
+    position: relative;
+  }
+  
+  .navbar.responsive .menu-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%; /* Ensure full width */
+  }
+  
+  /* This line ensures all links are visible when toggled */
+  .navbar.responsive a:not(.menu-icon) {
+    display: block;
+  }
+}
+
+/* Header */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     background-color: #f8f8f8;
+    margin-top: 40px; /* To account for fixed navbar */
 }
 
 .logo img {
@@ -119,6 +150,7 @@ a:hover {
     justify-content: center;
     text-align: center;
     color: black;
+    padding: 0 20px;
 }
 
 .video-bg {
@@ -138,44 +170,60 @@ a:hover {
 .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto 30px;
 }
 
 /* Countdown Timer */
 .countdown {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: 40px 0;
+    gap: 10px;
 }
 
 .countdown-item {
-    margin: 0 15px;
+    margin: 5px;
     text-align: center;
 }
 
 .countdown-number {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: bold;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     padding: 10px 15px;
     display: inline-block;
-    min-width: 80px;
+    min-width: 60px;
 }
 
 .countdown-label {
-    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     margin-top: 5px;
     text-transform: uppercase;
-    color:black;
+    color: black;
 }
 
 /* Registration Form */
 .registration-form {
     background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     max-width: 500px;
+    width: 100%;
     margin: 30px auto;
 }
 
@@ -224,14 +272,14 @@ a:hover {
 
 /* Awards Section */
 .awards-section {
-    padding: 80px 0;
+    padding: 60px 20px;
     background: #fff;
 }
 
 .awards-section h2 {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .awards-container {
@@ -246,7 +294,8 @@ a:hover {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     transition: transform 0.3s ease;
 }
 
@@ -299,13 +348,14 @@ a:hover {
 .tournament-section {
     background: #222;
     color: white;
-    padding: 80px 0;
+    padding: 60px 20px;
 }
 
 .tournament-section h2 {
     text-align: center;
     color: white;
     margin-bottom: 50px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .tournament-days {
@@ -318,13 +368,14 @@ a:hover {
 .day-card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    padding: 30px;
-    width: 45%;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
     margin-bottom: 30px;
 }
 
 .day-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     color: white;
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -332,21 +383,21 @@ a:hover {
 }
 
 .day-date {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     color: #4CAF50;
     margin-bottom: 15px;
 }
 
 .schedule-item {
     display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 }
 
 .time {
     display: flex;
     align-items: center;
-    margin-right: 15px;
-    min-width: 120px;
+    margin-bottom: 5px;
 }
 
 .time i {
@@ -355,18 +406,19 @@ a:hover {
 }
 
 .activity {
-    flex: 1;
+    padding-left: 24px;
 }
 
 /* Sponsors Section */
 .sponsors-section {
-    padding: 60px 0;
+    padding: 60px 20px;
     background: #f8f8f8;
     text-align: center;
 }
 
 .sponsors-section h2 {
     margin-bottom: 40px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .sponsors-container {
@@ -374,11 +426,13 @@ a:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .sponsor-logo {
-    height: 80px;
+    height: auto;
+    max-height: 80px;
+    max-width: 100%;
     filter: grayscale(30%);
     transition: filter 0.3s, transform 0.3s;
 }
@@ -392,7 +446,7 @@ a:hover {
 .footer {
     background: #111;
     color: #ccc;
-    padding: 40px 0;
+    padding: 40px 20px;
     text-align: center;
 }
 
@@ -428,115 +482,234 @@ a:hover {
 }
 
 /* Team Cards */
-/* Team Section Styles */
-.team-card {
-  width: 250px; /* Reduced from original size */
-  cursor: pointer;
+.team-section {
+    padding: 60px 20px;
+    text-align: center;
 }
-a:hover {
-  color: #000;
+
+.team-section h2 {
+    margin-bottom: 40px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
 }
-.team-avatar {
-  position: relative;
-  height: 350px; /* Reduced height to maintain proportion */
-  width: 250px; /* Added explicit width */
-  overflow: hidden;
-  border-radius: 5px;
-  text-align: center;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-  background-position: center center;
-  background-size: cover;
-}
-.team-avatar-round-container {
-  display: flex;
-  justify-content: center;
-  height: 0;
-  transition: all 0.3s cubic-bezier(0.68, -0.13, 0.265, 1.13);
-}
-.team-avatar-round {
-  height: 80px; /* Slightly reduced */
-  width: 80px; /* Slightly reduced */
-  overflow: hidden;
-  border-radius: 100px;
-  background-position: center center;
-  background-size: cover;
-  opacity: 0;
-  transform: scale(0, 0);
-  transition: all 0.3s cubic-bezier(0.68, -0.13, 0.265, 1.13);
-}
-.team-description {
-  position: absolute;
-  background: #fff;
-  padding: 15px 20px;
-  top: 255px; /* Adjusted to match new height */
-  height: 100%;
-  transition: all 0.3s cubic-bezier(0.68, 0, 0.265, 1);
-}
-.team-name {
-  display: inline-block;
-  color: #00FFA4;
-  font-weight: bold;
-  font-size: 1.4rem; /* Slightly reduced */
-}
-.team-position {
-  display: inline-block;
-/*   background: #e9e9e9; */
-  padding: 1px 8px;
-  border-radius: 100px;
-  font-size: 0.85rem; /* Slightly reduced */
-  font-style: italic;
-  color: #333;
-  line-height: -100px;
-  margin-bottom: 15px;
-}
-.team-card:hover .team-description {
-  top: 0 !important;
-}
-.team-card:hover .team-avatar-round-container {
-  display: flex;
-  justify-content: center;
-  height: 70px; /* Reduced */
-  margin-bottom: 15px;
-}
-.team-card:hover .team-avatar-round {
-  opacity: 1;
-  transform: scale(1, 1);
-}
-.team-button {
-  display: inline-block;
-  background: #00FFA4;
-  color: #fff;
-  height: 36px; /* Slightly reduced */
-  width: 36px; /* Slightly reduced */
-  border-radius: 100px;
-  text-align: center;
-}
-.team-button .fa {
-  margin-top: 9px; /* Adjusted for new button size */
-}
-/* Contenedor para las tarjetas de equipo */
+
 .team-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px; /* Espacio entre las tarjetas */
-  flex-wrap: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
-  overflow-x: auto; /* Permite desplazamiento horizontal si hay demasiadas tarjetas */
-  padding: 20px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
 }
 
-/* Asegura que las tarjetas mantengan su tamaño */
+.team-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.team-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
 .team-card {
-  width: 250px;
-  flex: 0 0 auto; /* No permitir que las tarjetas se estiren o se encojan */
-  cursor: pointer;
+    width: 250px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    scroll-snap-align: start;
 }
 
-/* Ajuste responsive opcional */
-@media (max-width: 768px) {
-  .team-container {
-    justify-content: flex-start; /* Alinea al inicio en móviles para mejor desplazamiento */
-    padding-left: 20px; /* Agrega algo de padding en el borde izquierdo */
-  }
+.team-avatar {
+    position: relative;
+    height: 350px;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    background-position: center center;
+    background-size: cover;
+}
+
+.team-avatar-round-container {
+    display: flex;
+    justify-content: center;
+    height: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.13, 0.265, 1.13);
+}
+
+.team-avatar-round {
+    height: 80px;
+    width: 80px;
+    overflow: hidden;
+    border-radius: 100px;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0;
+    transform: scale(0, 0);
+    transition: all 0.3s cubic-bezier(0.68, -0.13, 0.265, 1.13);
+}
+
+.team-description {
+    position: absolute;
+    background: #fff;
+    padding: 15px 20px;
+    top: 255px;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.68, 0, 0.265, 1);
+}
+
+.team-name {
+    display: inline-block;
+    color: #00FFA4;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.team-position {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #333;
+    line-height: -100px;
+    margin-bottom: 15px;
+}
+
+.team-card:hover .team-description {
+    top: 0 !important;
+}
+
+.team-card:hover .team-avatar-round-container {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.team-card:hover .team-avatar-round {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.team-button {
+    display: inline-block;
+    background: #00FFA4;
+    color: #fff;
+    height: 36px;
+    width: 36px;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.team-button .fa {
+    margin-top: 9px;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 992px) {
+    .day-card {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .tournament-days {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .menu-links {
+        display: none;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .navbar a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .navbar .menu-icon {
+        display: block;
+    }
+    
+    .navbar.responsive .menu-links {
+        display: block;
+        position: relative;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    .schedule-item {
+        flex-direction: column;
+    }
+    
+    .time {
+        margin-bottom: 5px;
+        min-width: auto;
+    }
+    
+    .team-container {
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .countdown-item {
+        margin: 5px;
+    }
+    
+    .countdown-number {
+        min-width: 50px;
+        font-size: 1.5rem;
+        padding: 8px 10px;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .registration-form {
+        padding: 15px;
+    }
+    
+    .award-card {
+        max-width: 100%;
+    }
+    
+    .register-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .social-icons a {
+        font-size: 1.2rem;
+        margin: 0 8px;
+    }
 }
