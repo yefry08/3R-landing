@@ -352,7 +352,18 @@ frameborder="0" allowfullscreen>
     
     <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    
+    <script>
+  function toggleMenu() {
+    var navbar = document.getElementById("myNavbar");
+    if (navbar.className === "navbar") {
+      navbar.className += " responsive";
+    } else {
+      navbar.className = "navbar";
+    }
+    console.log("Toggle menu clicked, navbar class is now: " + navbar.className);
+  }
+</script>
+
     <!-- Countdown Timer Script -->
     <script>
         // Set the date we're counting down to
