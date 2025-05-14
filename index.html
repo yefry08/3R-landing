@@ -31,11 +31,16 @@
  <section id="home" class="hero-section">
 
     <!-- Video de fondo -->
-    <video autoplay muted loop playsinline class="video-bg">
-        <source src="https://www.youtube.com/embed/KhVPX--VNpM?autoplay=1&loop=1&playlist=KhVPX--VNpM" type="video/mp4">
-        Tu navegador no soporta videos en HTML5.
-    </video>
-
+   <div class="video-bg">
+    <iframe 
+        src="https://www.youtube.com/embed/KhVPX--VNpM?autoplay=1&loop=1&playlist=KhVPX--VNpM&mute=1&controls=0" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen
+        style="width:100%;height:100%;"
+        class="video-bg">
+    </iframe>
+</div>
     <!-- Contenido sobre el video -->
     <div class="container hero-content">
                 <div class="countdown">
@@ -160,81 +165,83 @@ frameborder="0" allowfullscreen>
       </section>
       
       <!-- Team Section -->
-      <div class="container">
-        <!-- Reemplazamos los múltiples "row" con un solo contenedor para las tarjetas -->
-        <div class="team-container">
-          <!-- Primera tarjeta -->
-          <div class="team-card">
-            <div class="team-avatar" style="background-image: url(https://media.licdn.com/dms/image/v2/D4E03AQGOeQsRDnOMDg/profile-displayphoto-shrink_400_400/B4EZR_29qnGYAk-/0/1737311902763?e=1749081600&v=beta&t=WZsote3kw0IgsA81RNOA-ZxyMczxM57ycQBNVuvlydA);">
-              <div class="team-description">
-                <div class="team-avatar-round-container">
-                  <div class="team-avatar-round" style="background-image: url(https://media.licdn.com/dms/image/v2/D4E03AQGOeQsRDnOMDg/profile-displayphoto-shrink_400_400/B4EZR_29qnGYAk-/0/1737311902763?e=1749081600&v=beta&t=WZsote3kw0IgsA81RNOA-ZxyMczxM57ycQBNVuvlydA);"></div>
-                </div>
-                <span class="team-name">Yefry Núñez</span><br>
-                <span class="team-position">COO</span>
-                <p>Serial Entrepreneur|<br> IA Engineer|      Full-Stack Developer</p>
-                <a href="https://mail.google.com/mail/u/0/#search/yefrynunez45%40gmail.com?compose=new"" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/yefry-n%C3%BA%C3%B1ez-67a61831a/" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-              </div>
-            </div>
+   <!-- Team Section -->
+<div class="container">
+  <div class="team-container">
+    <!-- Tarjeta 1 -->
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://media.licdn.com/dms/image/v2/D4E03AQGOeQsRDnOMDg/profile-displayphoto-shrink_400_400/B4EZR_29qnGYAk-/0/1737311902763?e=1749081600&v=beta&t=WZsote3kw0IgsA81RNOA-ZxyMczxM57ycQBNVuvlydA');">
+        <div class="team-description">
+          <div class="team-avatar-round-container">
+            <div class="team-avatar-round" style="background-image: url('https://media.licdn.com/dms/image/v2/D4E03AQGOeQsRDnOMDg/profile-displayphoto-shrink_400_400/B4EZR_29qnGYAk-/0/1737311902763?e=1749081600&v=beta&t=WZsote3kw0IgsA81RNOA-ZxyMczxM57ycQBNVuvlydA');"></div>
           </div>
-          
-          <!-- Segunda tarjeta -->
-          <div class="team-card">
-            <div class="team-avatar" style="background-image: url(https://media.licdn.com/dms/image/v2/D5603AQHkcgEanpy1Pg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1709860006984?e=1749081600&v=beta&t=Y07d7hM-UxTiyesXkO-4fFRgXOatg1Y-diEFUPnuEkw);">
-              <div class="team-description">
-                <div class="team-avatar-round-container">
-                  <div class="team-avatar-round" style="background-image: url(https://media.licdn.com/dms/image/v2/D5603AQHkcgEanpy1Pg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1709860006984?e=1749081600&v=beta&t=Y07d7hM-UxTiyesXkO-4fFRgXOatg1Y-diEFUPnuEkw);"></div>
-                </div>
-                <span class="team-name">Kamila Acevedo</span><br>
-                <span class="team-position">CEO</span>
-                <p>Business Intelligence | Project Management | Innovation</p>
-                <a href="https://mail.google.com/mail/u/0/#search/kamila.chantal16%40gmail.com?compose=new" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                <a href="https://media.licdn.com/dms/image/v2/D4E03AQFLLcwpgjyttA/profile-displayphoto-shrink_400_400/B4EZa3y0ESHwAg-/0/1746840275532?e=1752710400&v=beta&t=8KNkdW11h0lxgirsPajL1h_xdI3_RmU2cIrp1OMqgOk" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Tercera tarjeta -->
-          <div class="team-card">
-            <div class="team-avatar" style="background-image: url(https://media.licdn.com/dms/image/v2/D4E03AQGA_8quMJwMcw/profile-displayphoto-shrink_400_400/B4EZXKaQPvHcAg-/0/1742857635229?e=1749081600&v=beta&t=ooJyLTdL_Y0PZHdK3s37p3R69HSS4CUhwYhvv84tRxA);">
-              <div class="team-description">
-                <div class="team-avatar-round-container">
-                  <div class="team-avatar-round" style="background-image: url(https://media.licdn.com/dms/image/v2/D4E03AQGA_8quMJwMcw/profile-displayphoto-shrink_400_400/B4EZXKaQPvHcAg-/0/1742857635229?e=1749081600&v=beta&t=ooJyLTdL_Y0PZHdK3s37p3R69HSS4CUhwYhvv84tRxA);"></div>
-                </div>
-                <span class="team-name">Laura Campagna</span><br>
-                <span class="team-position">CFO</span>
-                <p>I'm a university student at PUCMM, passionate about finance, investments, and building a strong future for society and myself.</p>
-                <a href="Lxcs0002@ce.pucmm.edu.do" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/laura-campagna-9997212a2/" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Cuarta tarjeta -->
-          <div class="team-card">
-            <div class="team-avatar" style="background-image: url(https://media.licdn.com/dms/image/v2/D4E03AQGQmLrawHupHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682020478749?e=1749081600&v=beta&t=_XYlu1hUR2ZRosqZp5ZMOVq1l-xtG50Jqg0CCByMISQ);">
-              <div class="team-description">
-                <div class="team-avatar-round-container">
-                  <div class="team-avatar-round" style="background-image: url(https://media.licdn.com/dms/image/v2/D4E03AQGQmLrawHupHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682020478749?e=1749081600&v=beta&t=_XYlu1hUR2ZRosqZp5ZMOVq1l-xtG50Jqg0CCByMISQ);"></div>
-                </div>
-                <span class="team-name">Fidel Soto</span><br>
-                <span class="team-position">CTO</span>
-                <p>
-                    Technical Director abd software and videogames</p>
-                <a href="" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/fidelsoto/" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </div>
+          <span class="team-name">Yefry Núñez</span><br>
+          <span class="team-position">COO</span>
+          <p>Serial Entrepreneur |<br> IA Engineer | Full-Stack Developer</p>
+          <a href="mailto:yefrynunez45@gmail.com" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/yefry-n%C3%BA%C3%B1ez-67a61831a/" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
         </div>
       </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://media.licdn.com/dms/image/v2/D5603AQHkcgEanpy1Pg/profile-displayphoto-shrink_400_400/0/1709860006984?e=1749081600&v=beta&t=Y07d7hM-UxTiyesXkO-4fFRgXOatg1Y-diEFUPnuEkw');">
+        <div class="team-description">
+          <div class="team-avatar-round-container">
+            <div class="team-avatar-round" style="background-image: url('https://media.licdn.com/dms/image/v2/D5603AQHkcgEanpy1Pg/profile-displayphoto-shrink_400_400/0/1709860006984?e=1749081600&v=beta&t=Y07d7hM-UxTiyesXkO-4fFRgXOatg1Y-diEFUPnuEkw');"></div>
+          </div>
+          <span class="team-name">Kamila Acevedo</span><br>
+          <span class="team-position">CEO</span>
+          <p>Business Intelligence | Project Management | Innovation</p>
+          <a href="mailto:kamila.chantal16@gmail.com" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+          <a href="https://media.licdn.com/dms/image/v2/D4E03AQFLLcwpgjyttA/profile-displayphoto-shrink_400_400/B4EZa3y0ESHwAg-/0/1746840275532?e=1752710400&v=beta&t=8KNkdW11h0lxgirsPajL1h_xdI3_RmU2cIrp1OMqgOk" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://media.licdn.com/dms/image/v2/D4E03AQGA_8quMJwMcw/profile-displayphoto-shrink_400_400/B4EZXKaQPvHcAg-/0/1742857635229?e=1749081600&v=beta&t=ooJyLTdL_Y0PZHdK3s37p3R69HSS4CUhwYhvv84tRxA');">
+        <div class="team-description">
+          <div class="team-avatar-round-container">
+            <div class="team-avatar-round" style="background-image: url('https://media.licdn.com/dms/image/v2/D4E03AQGA_8quMJwMcw/profile-displayphoto-shrink_400_400/B4EZXKaQPvHcAg-/0/1742857635229?e=1749081600&v=beta&t=ooJyLTdL_Y0PZHdK3s37p3R69HSS4CUhwYhvv84tRxA');"></div>
+          </div>
+          <span class="team-name">Laura Campagna</span><br>
+          <span class="team-position">CFO</span>
+          <p>Finance student at PUCMM, passionate about investments and building a better future for society and myself.</p>
+          <a href="mailto:Lxcs0002@ce.pucmm.edu.do" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/laura-campagna-9997212a2/" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="team-card">
+      <div class="team-avatar" style="background-image: url('https://media.licdn.com/dms/image/v2/D4E03AQGQmLrawHupHA/profile-displayphoto-shrink_400_400/0/1682020478749?e=1749081600&v=beta&t=_XYlu1hUR2ZRosqZp5ZMOVq1l-xtG50Jqg0CCByMISQ');">
+        <div class="team-description">
+          <div class="team-avatar-round-container">
+            <div class="team-avatar-round" style="background-image: url('https://media.licdn.com/dms/image/v2/D4E03AQGQmLrawHupHA/profile-displayphoto-shrink_400_400/0/1682020478749?e=1749081600&v=beta&t=_XYlu1hUR2ZRosqZp5ZMOVq1l-xtG50Jqg0CCByMISQ');"></div>
+          </div>
+          <span class="team-name">Fidel Soto</span><br>
+          <span class="team-position">CTO</span>
+          <p>Technical Director of Software and Video Games</p>
+          <a href="mailto:fidelsoto@example.com" class="team-button"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+          <a href="https://media.licdn.com/dms/image/v2/D4E03AQGQmLrawHupHA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682020478749?e=1752710400&v=beta&t=CbNLwqC3ggOvH91oB1EJnu5x89LaFInrNzm6bje8mmM" class="team-button"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+                                                                                                                   
+                                                                                                                                 
     <!-- Sponsors Section -->
     <section id="sponsors-section">
         <div class="container">
             <h2 style="text-align: center;"> Proudly Funded by:</h2>
             <div class="sponsors-container">
-                <img src="https://eldominico.edu.do/wp-content/uploads/2024/01/Asset-20.png" alt="Dominico" class="sponsor-logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGSCuvBLXOmmgT51_bQM85UFtAZn25zTnuEA&s" alt="Dominico" class="sponsor-logo">
                 <img src="https://www.trustfortheamericas.org/media/projects/logos/Logo_-_Full_color_1.png" alt="Trust for the Americas" class="sponsor-logo">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/EscudoPucmm.gif" alt="PUCMM" class="sponsor-logo">
                 <img src="https://assets.revistafactordeexito.com/organizations/70c639df5e30bdee440e4cdf599fec2b/logo.jpeg?v=1675274845" alt="Factor de Exito" class="sponsor-logo">
@@ -394,4 +401,5 @@ frameborder="0" allowfullscreen>
     </script>
 </body>
 </html>
+
 
